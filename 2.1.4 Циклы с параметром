@@ -1,0 +1,21 @@
+program SumOfEvenDigits;
+
+var
+  number, digit, sum: integer;
+
+begin
+  sum := 0;
+  
+  writeln('Введите число: ');
+  readln(number);
+  while number > 0 do
+  begin
+    digit := number mod 10;
+    if digit mod 2 = 0 then
+      sum := sum + digit;
+    number := number div 10;
+  end;
+  
+  writeln('Сумма четных цифр числа: ', sum);
+  
+end.

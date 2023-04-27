@@ -1,0 +1,33 @@
+program MinMaxDigits;
+
+var
+  number, digit, maxDigit, minDigit: integer;
+
+begin
+  writeln('Введите число: ');
+  readln(number);
+  
+  // Инициализация переменных для максимальной и минимальной цифры
+  maxDigit := number mod 10;
+  minDigit := number mod 10;
+  
+  // Пройтись по всем цифрам числа с помощью цикла
+  while number > 0 do
+  begin
+    digit := number mod 10; // получаем текущую цифру
+    
+    // Если текущая цифра больше максимальной, то обновляем максимальную цифру
+    if digit > maxDigit then
+      maxDigit := digit;
+      
+    // Если текущая цифра меньше минимальной, то обновляем минимальную цифру
+    if digit < minDigit then
+      minDigit := digit;
+    
+    number := number div 10; // удаляем последнюю цифру из числа
+  end;
+  
+  writeln('Максимальная цифра: ', maxDigit);
+  writeln('Минимальная цифра: ', minDigit);
+  
+end.

@@ -1,0 +1,16 @@
+program SwapVariables;
+var
+  x, y: integer;
+begin
+  write('Введите x: ');
+  readln(x);
+  write('Введите y: ');
+  readln(y);
+
+  x := x + y;
+  y := x - y;
+  x := x - y;
+
+  writeln('Значение x теперь равно: ', x);
+  writeln('Значение y теперь равно: ', y);
+end.

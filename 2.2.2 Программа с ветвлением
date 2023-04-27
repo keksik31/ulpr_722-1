@@ -1,0 +1,23 @@
+using System;
+namespace PhoneCallCost
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int duration, weekday;
+            double cost;
+            
+            Console.Write("Введите длительность разговора (в минутах): ");
+            duration = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите день недели (1 - понедельник, ..., 7 - воскресенье): ");
+            weekday = Convert.ToInt32(Console.ReadLine());
+            if (weekday == 6 || weekday == 7)
+                cost = duration * 0.8;
+            else
+                cost = duration;
+  
+            Console.WriteLine("Стоимость разговора: {0:0.00} руб.", cost);
+        }
+    }
+}

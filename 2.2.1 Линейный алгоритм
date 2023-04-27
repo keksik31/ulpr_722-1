@@ -1,0 +1,29 @@
+using System;
+namespace SwapVariables
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x, y, z;
+            Console.Write("Введите значение x: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите значение y: ");
+            y = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите значение z: ");
+            z = Convert.ToInt32(Console.ReadLine());
+            // Обмен значениями переменных без использования дополнительной переменной
+            x = x + y;
+            y = x - y;
+            x = x - y;
+            y = y + z;
+            z = y - z;
+            y = y - z;
+
+            Console.WriteLine("x = " + x);
+            Console.WriteLine("y = " + y);
+            Console.WriteLine("z = " + z);
+            Console.ReadLine();
+        }
+    }
+}

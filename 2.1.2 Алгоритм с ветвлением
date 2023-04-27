@@ -1,0 +1,27 @@
+program ResistanceCalculation;
+var
+  r1, r2, r_total: real;
+  connection_type: string;
+begin
+  write('Введите сопротивление 1: ');
+  readln(r1);
+  write('Введите сопротивление 2: ');
+  readln(r2);
+  write('Введите тип соединения (1 - последовательное, 2 - параллельное): ');
+  readln(connection_type);
+
+  if connection_type = '1' then
+  begin
+    r_total := r1 + r2;
+    writeln('Сопротивление в последовательном соединении равно ', r_total);
+  end
+  else if connection_type = '2' then
+  begin
+    r_total := 1 / ((1 / r1) + (1 / r2));
+    writeln('Сопротивление в параллельном соединении равно ', r_total);
+  end
+  else
+  begin
+    writeln('Неверный тип соединения');
+  end;
+end.
